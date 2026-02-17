@@ -68,6 +68,8 @@ The application is built entirely with HTML, CSS, and Vanilla JavaScript without
 
 - GitHub REST API
 
+---
+
 ## 🧠 What This Project Demonstrates
 
 This project highlights:
@@ -91,17 +93,17 @@ This project highlights:
 ## 📂 Project Structure
 github-user-search/
 │
-├── index.html                  # Main HTML file
+├── index.html                  
 │
-├── CSS/                        # Stylesheets folder
-│   ├── style.css               # Main custom styles
-│   ├── normalize.css           # CSS reset/normalize
-│   └── all.min.css             # Font Awesome icons CSS
+├── CSS/                        
+│   ├── style.css               
+│   ├── normalize.css           
+│   └── all.min.css             
 │
-├── JS/                         # JavaScript folder
-│   └── main.js                 # Main JS file
+├── JS/                         
+│   └── main.js                 
 │
-└── README.md                   # Project documentation
+└── README.md                   
 
 ---
 
@@ -168,5 +170,6 @@ No build tools or dependencies required.
 ## 👤 Author
 
 Abd Almoen Albarbari
+
 Frontend Developer
 
