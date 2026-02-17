@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ===== Meta Setup ===== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== Page Title ===== -->
+    <title>Dev Finder</title>
+
+    <!-- ===== CSS Files ===== -->
+    <!-- Normalize for cross-browser consistency -->
+    <link rel="stylesheet" href="CSS/normalize.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="CSS/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+
+<body>
+
+    <!-- ===== Main Wrapper ===== -->
+    <div class="container">
+
+        <!-- ===== Header Section ===== -->
+        <header class="site-header">
+            <h1>DevFinder</h1>
+
+            <!-- Theme Toggle Button (Improved Accessibility) -->
+            <!-- Changed from div to button for keyboard support -->
+            <button class="color-icon" type="button" aria-label="Toggle dark mode">
+                <span>Dark</span>
+                <i class="fa-solid fa-moon" aria-hidden="true"></i>
+            </button>
+        </header>
+
+    </div>
+    <div class="container">
+
+        <!-- ===== Search Form Section ===== -->
+        <!-- Added role="search" for semantic meaning -->
+        <form action="#" role="search" aria-label="Search GitHub user">
+
+            <!-- Search Icon (decorative, hidden from screen readers) -->
+            <!-- Accessible Label (hidden visually if needed in CSS) -->
+            <label for="username" class="visually-hidden"> <i class="fa-solid fa-search" aria-hidden="true"></i></label>
+
+            <!-- Search Input -->
+            <input type="text" id="username" name="username" placeholder="Search GitHub username..." autocomplete="off"
+                required aria-required="true">
+
+            <!-- Submit Button -->
+            <input type="submit" value="Get Repo">
+        </form>
+    </div>
+    <div class="container">
+
+        <!-- ===== Repositories Results Section ===== -->
+        <!-- Changed to main for semantic structure -->
+        <main class="repos-area" aria-live="polite">
+            <!-- Repositories will be dynamically inserted here -->
+        </main>
+
+    </div>
+
+    <!-- ===== JavaScript File ===== -->
+    <script src="JS/main.js"></script>
+</body>
+
+</html>

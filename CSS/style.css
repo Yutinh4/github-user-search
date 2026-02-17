@@ -1,0 +1,573 @@
+/* =========================================================
+   Global Reset & Box Model
+   Ensures consistent sizing behavior across all elements
+========================================================= */
+* {
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   Root Variables (CSS Custom Properties)
+   Centralized theme management for light/dark modes
+========================================================= */
+:root {
+    --main-bg-color: #f5f8ff;
+    --main-bg-dark: hsl(222.22deg 40.3% 13.14%);
+    --card-dark-mood: hsl(223.9deg 39.81% 20.2%);
+    --info-dark-mood: hsl(222.22deg 40.3% 13.14%);
+    --btn-user-search: #0079fe;
+    --btn-user-search-hover: #0657f9;
+}
+
+/* =========================================================
+   Anchor Default Styling
+========================================================= */
+a {
+    text-decoration: none;
+    transition: 0.3s ease;
+    color: #333;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+body.dark a {
+    color: white;
+}
+
+/* =========================================================
+   Body Theme Handling
+   Default = Light Mode
+========================================================= */
+body {
+    background-color: var(--main-bg-color);
+    font-family: monospace, Tahoma, Arial;
+}
+
+body.dark {
+    background-color: var(--main-bg-dark);
+    color: white;
+}
+
+/* =========================================================
+   Container Layout System
+   Responsive fixed-width container pattern
+========================================================= */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+/* Breakpoints */
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* =========================================================
+   Header Section
+   Flex layout for logo + theme toggle
+========================================================= */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto;
+}
+
+/* Theme Toggle Button */
+header .color-icon {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #4e6692;
+    opacity: 0.7;
+    transition: 0.3s ease;
+    background-color: transparent;
+    border: none;
+}
+
+body.dark .color-icon {
+    color: white;
+}
+
+header .color-icon:hover {
+    opacity: 1;
+}
+
+/* FontAwesome Icon Override */
+header i {
+    --fa: "\f186";
+}
+
+/* =========================================================
+   Search Form
+   Relative positioning used for icon & button placement
+========================================================= */
+form {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+/* Search Icon positioned inside input */
+form i {
+    position: absolute;
+    top: 50%;
+    left: 22%;
+    transform: translateY(-50%);
+    font-size: 21px;
+    color: var(--btn-user-search);
+}
+
+/* Input Field Styling */
+form input {
+    padding: 20px 10px;
+    width: 60%;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    padding-left: 50px;
+    box-shadow: 0 0 20px 0px #dededede;
+    letter-spacing: 1px;
+}
+
+/* Submit Button */
+form input:last-child {
+    background-color: var(--btn-user-search);
+    color: white;
+    position: absolute;
+    right: 21%;
+    padding: 12px 10px;
+    top: 10px;
+    width: 95px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+form input:last-child:hover {
+    background-color: var(--btn-user-search-hover);
+}
+
+/* Dark Mode Input Styling */
+body.dark form input:not(:last-child),
+body.dark .card,
+body.dark .loading-card {
+    background-color: var(--card-dark-mood);
+    box-shadow: none;
+    color: white;
+}
+
+body.dark form input::placeholder {
+    color: white;
+}
+
+body.dark form input:last-child {
+    box-shadow: none;
+}
+
+/* Focus State */
+form input:focus {
+    border: 1px solid;
+}
+
+
+
+/* =========================================================
+   Card Component (User Profile)
+========================================================= */
+.card,
+.loading-card {
+    margin: 0 auto;
+    width: 60%;
+    background-color: white;
+    box-shadow: 0 0 20px 0px #dededede;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.profile,
+.more-info,
+.desc {
+    text-align: left;
+}
+
+/* Profile Layout */
+.profile {
+    display: flex;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    padding-top: 15px;
+    gap: 20px;
+    align-items: center;
+}
+
+.profile img {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+}
+
+/* Utility class to hide elements visually */
+.hidden {
+    visibility: hidden;
+}
+
+/* =========================================================
+   Profile Info Block
+========================================================= */
+.profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 26px;
+    padding: 20px;
+    margin: 20px;
+    background-color: var(--main-bg-color);
+    border-radius: 10px;
+}
+
+body.dark .profile-info {
+    background-color: var(--info-dark-mood);
+}
+
+.profile .profile-name .date {
+    color: gray;
+}
+
+body.dark .profile-name .date {
+    color: white;
+    opacity: 0.8;
+}
+
+.profile .profile-name h3 {
+    margin: 0px 0;
+    font-size: 22px;
+}
+
+.profile .profile-name p {
+    margin: 5px 0;
+    color: var(--btn-user-search);
+    font-weight: bold;
+}
+
+.profile-name p a {
+    color: var(--btn-user-search) !important;
+}
+
+.desc {
+    padding-left: 30px;
+    color: gray;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+body.dark .desc {
+    color: white;
+    opacity: 0.8;
+}
+
+.profile-info>div {
+    display: grid;
+    font-size: 17px;
+    gap: 10px;
+}
+
+.profile-info>div span:first-child {
+    color: gray;
+}
+
+.profile-info>div span:last-child {
+    font-weight: bold;
+}
+
+body.dark .profile-info {
+    background-color: var(--info-dark-mood);
+}
+
+body.dark .profile-info>div span:first-child {
+    color: white;
+    opacity: 0.8;
+}
+
+.more-info ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding-left: 22px;
+    padding-right: 22px;
+}
+
+.more-info ul li {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.more-info ul li span {
+    padding-left: 20px;
+}
+
+.empty {
+    opacity: 0.7;
+}
+
+body.dark .more-info ul li {
+    background-color: var(--info-dark-mood);
+    border-radius: 5px;
+}
+
+body.light .more-info ul li {
+    background-color: var(--main-bg-color);
+}
+
+/* End The Profile */
+/* End All Of Normal API Fetch Style */
+/* Start Waiting Style */
+
+.loading {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.loading .dots {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.loading .dots span {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    display: block;
+    animation: loadingDots 0.7s infinite alternate;
+}
+
+body.light .loading .dots span {
+    background-color: var(--main-bg-dark);
+}
+
+.loading .dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading .dots span:last-child {
+    animation-delay: 0.4s;
+}
+
+.loading .loading-word {
+    padding-left: 14px;
+}
+
+.loading .loading-word {
+    animation: opac 1s infinite alternate;
+}
+
+@keyframes opac {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.5;
+    }
+}
+
+@keyframes loadingDots {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-10px);
+        opacity: 0.3;
+    }
+}
+
+/* =========================================================
+   Sweet Alert (Custom Modal)
+   Fixed centered overlay with backdrop effect
+========================================================= */
+.sweet-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    box-shadow: 0 0 14px 50pc hsl(224deg 40% 20% / 70%);
+    background-color: var(--card-dark-mood);
+    border-radius: 10px;
+    width: 30%;
+    height: 35%;
+    font-size: 20px;
+}
+
+
+.sweet-alert i {
+    font-size: 45px;
+}
+
+.sweet-alert .error-title {
+    margin: 10px 0;
+    font-size: 25px;
+    transform: translateY(30px);
+}
+
+.sweet-alert .btn {
+    background-color: var(--main-bg-color);
+    color: #333;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 23px;
+    padding: 10px;
+    text-transform: uppercase;
+    width: 60%;
+    margin: 0 auto;
+    transform: translateY(60px);
+}
+
+body.dark .sweet-alert {
+    background-color: var(--main-bg-color);
+    color: var(--card-dark-mood);
+}
+
+body.dark .sweet-alert .btn {
+    background-color: var(--card-dark-mood);
+    color: var(--main-bg-color);
+}
+
+.wrong-page {
+    margin: 0 auto;
+    width: 60%;
+    margin-top: 40px;
+}
+
+.wrong-page i:not(.retry i) {
+    font-size: 40px;
+    opacity: 0.8;
+}
+
+.wrong-page p {
+    opacity: 0.7;
+    line-height: 1.5;
+}
+
+.wrong-page .retry {
+    padding: 10px;
+    background-color: rgb(128 128 128 / 30%);
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    transition: 0.3s ease;
+}
+
+.wrong-page .retry:hover {
+    background-color: rgb(128 128 128 / 50%);
+}
+
+/* =========================================================
+   Responsive Adjustments
+   Optimizes layout for small screens
+========================================================= */
+@media (max-width:690px) {
+    header {
+        width: 100%;
+        font-size: 11px;
+    }
+
+    header .color-icon {
+        font-size: 14px;
+    }
+
+    form input {
+        width: 100%;
+        font-size: 13px;
+    }
+
+    form i {
+        left: 20px;
+    }
+
+    form input:last-child {
+        width: 79px;
+        font-size: 12px;
+        right: 15px;
+        top: 7px;
+    }
+
+    .card,
+    .loading-card {
+        width: 100%;
+    }
+
+    .profile-info>div,
+    .profile-name,
+    .more-info {
+        font-size: 11px;
+    }
+
+    .profile-name h3 {
+        font-size: 15px !important;
+    }
+
+    .profile img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .desc {
+        font-size: 11px;
+    }
+
+    .sweet-alert {
+        width: 67%;
+        height: 20%;
+    }
+
+    .sweet-alert i {
+        font-size: 20px;
+    }
+
+    .error-title {
+        font-size: 15px !important;
+        transform: none !important;
+    }
+
+    .sweet-alert .btn {
+        transform: none;
+        font-size: 13px;
+    }
+}
