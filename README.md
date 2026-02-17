@@ -16,13 +16,13 @@ The application is built entirely with HTML, CSS, and Vanilla JavaScript without
 
 ## 🚀 Features
 
-- 🔍 Search for any public GitHub user
+#### 🔍 Search for any public GitHub user
 
-- 📡 Fetch data from the GitHub REST API
+#### 📡 Fetch data from the GitHub REST API
 
-- ⏳ Custom loading animation while fetching data
+#### ⏳ Custom loading animation while fetching data
 
-### ❌ Error handling for:
+#### ❌ Error handling for:
 
 - 404 (User not found)
 
@@ -42,11 +42,11 @@ The application is built entirely with HTML, CSS, and Vanilla JavaScript without
 
  - Twitter
 
-- 🎨 Light / Dark mode toggle
+#### 🎨 Light / Dark mode toggle
 
-- 💾 Theme persistence using LocalStorage
+#### 💾 Theme persistence using LocalStorage
 
-- 📱 Fully responsive design (Flexbox & CSS Grid)
+#### 📱 Fully responsive design (Flexbox & CSS Grid)
 
 ---
 
