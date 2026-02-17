@@ -128,15 +128,9 @@ https://docs.github.com/en/rest
 
 ## 🌍 Live Demo
 
-(Will be added after deployment)
+🚀 **Live Application:**  
+[Open Live Demo](https://github-serch.netlify.app/)
 
-You can deploy easily using:
-
-GitHub Pages
-
-Netlify
-
-Vercel
 
 ---
 
