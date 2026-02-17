@@ -28,7 +28,7 @@ The application is built entirely with HTML, CSS, and Vanilla JavaScript without
 
 - Network errors
 
-### 📊 Display:
+#### 📊 Display:
 
  - Public repositories
 
@@ -36,7 +36,7 @@ The application is built entirely with HTML, CSS, and Vanilla JavaScript without
 
  - Following
 
-### 🔗 External links:
+#### 🔗 External links:
 
  - Blog
 
