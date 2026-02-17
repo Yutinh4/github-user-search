@@ -22,13 +22,13 @@ The application is built entirely with HTML, CSS, and Vanilla JavaScript without
 
 - ⏳ Custom loading animation while fetching data
 
-- ❌ Error handling for:
+### ❌ Error handling for:
 
 - 404 (User not found)
 
 - Network errors
 
-- 📊 Display:
+### 📊 Display:
 
  - Public repositories
 
@@ -36,7 +36,7 @@ The application is built entirely with HTML, CSS, and Vanilla JavaScript without
 
  - Following
 
-- 🔗 External links:
+### 🔗 External links:
 
  - Blog
 
