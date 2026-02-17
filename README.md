@@ -91,6 +91,7 @@ This project highlights:
 ---
 
 ## 📂 Project Structure
+
 github-user-search/
 │
 ├── index.html                  
