@@ -123,6 +123,7 @@ https://docs.github.com/en/rest
 ## 📷 Screenshots
 
 ![Light Mode](./images/screenshots/light.png)
+
 ![Dark Mode](./images/screenshots/dark.png)
 
 ---
