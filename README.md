@@ -131,7 +131,7 @@ https://docs.github.com/en/rest
 ## 🌍 Live Demo
 
 🚀 **Live Application:**  
-[Open Live Demo](https://github-serch.netlify.app/)
+[Open Live Demo](https://abdelmoen1.github.io/github-user-search/)
 
 
 ---
